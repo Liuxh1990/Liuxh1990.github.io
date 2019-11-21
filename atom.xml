@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>刘向辉的博客</title>
+  <icon>https://Liuxh1990.github.io/icon.png</icon>
+  <subtitle>人不可能脱离了社会，孤独存在。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://Liuxh1990.github.io/"/>
+  <updated>2019-11-21T08:05:19.074Z</updated>
+  <id>https://Liuxh1990.github.io/</id>
+  
+  <author>
+    <name>liuxh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift学习之路 第一弹 Swift的基础语法</title>
+    <link href="https://Liuxh1990.github.io/2019/11/21/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%AC%AC%E4%B8%80%E5%BC%B9-Swift%E7%9A%84%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>https://Liuxh1990.github.io/2019/11/21/Swift学习之路-第一弹-Swift的基础语法/</id>
+    <published>2019-11-21T08:01:11.000Z</published>
+    <updated>2019-11-21T08:05:19.074Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1、在swift-中如何导入框架-？&quot;&gt;&lt;a href=&quot;#1、在swift-中如何导入框架-？&quot; class=&quot;headerlink&quot; title=&quot;1、在swift 中如何导入框架 ？&quot;&gt;&lt;/a&gt;1、在swift 中如何导入框架 ？&lt;/h3&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Swift" scheme="https://Liuxh1990.github.io/categories/Swift/"/>
+    
+    
+      <category term="Swift学习系列" scheme="https://Liuxh1990.github.io/tags/Swift%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三弹 搭建初始界面导航</title>
+    <link href="https://Liuxh1990.github.io/2019/09/18/%E7%AC%AC%E4%B8%89%E5%BC%B9-%E6%90%AD%E5%BB%BA%E5%88%9D%E5%A7%8B%E7%95%8C%E9%9D%A2%E5%AF%BC%E8%88%AA/"/>
+    <id>https://Liuxh1990.github.io/2019/09/18/第三弹-搭建初始界面导航/</id>
+    <published>2019-09-18T12:56:30.000Z</published>
+    <updated>2019-10-09T01:21:24.583Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;从今天开始，以代码形式从头搭建一个基本的网页。由于是初学，所以现学现卖，学到哪里就写到哪里，初始会有很多不完善的地方，这些会一步一步在学习中慢慢完善。话不多说，进入正题…&lt;/p&gt;
+&lt;h3 id=&quot;一、网页布局&quot;&gt;&lt;a href=&quot;#一、网页布局&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术积累" scheme="https://Liuxh1990.github.io/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="Web开发系列" scheme="https://Liuxh1990.github.io/tags/Web%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二弹 建立基本网页所需要了解的基本知识</title>
+    <link href="https://Liuxh1990.github.io/2019/09/12/%E7%AC%AC%E4%BA%8C%E5%BC%B9-%E5%BB%BA%E7%AB%8B%E5%9F%BA%E6%9C%AC%E7%BD%91%E9%A1%B5%E6%89%80%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    <id>https://Liuxh1990.github.io/2019/09/12/第二弹-建立基本网页所需要了解的基本知识/</id>
+    <published>2019-09-12T04:34:47.000Z</published>
+    <updated>2019-10-09T01:21:33.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、网页的基本构成&quot;&gt;&lt;a href=&quot;#一、网页的基本构成&quot; class=&quot;headerlink&quot; title=&quot;一、网页的基本构成&quot;&gt;&lt;/a&gt;一、网页的基本构成&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;头部（head）:包含了网页的元数据。如 网页编码格式、标题、描述等
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术积累" scheme="https://Liuxh1990.github.io/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="Web开发系列" scheme="https://Liuxh1990.github.io/tags/Web%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一弹 Web开发环境搭建</title>
+    <link href="https://Liuxh1990.github.io/2019/09/09/%E7%AC%AC%E4%B8%80%E5%BC%B9-Web%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>https://Liuxh1990.github.io/2019/09/09/第一弹-Web开发环境搭建/</id>
+    <published>2019-09-09T03:02:21.000Z</published>
+    <updated>2019-09-10T07:09:55.016Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天开始从零学习Web,顺便做下积累，以便以后回顾的时候看 ，也为有想学习前端的小伙伴们提供一点借鉴，少走一些坑。相关的文章都会放入WEB开发系列文章中，话不多说，开整吧···&lt;/p&gt;
+&lt;h4 id=&quot;一、下载VSCode和浏览器-本人学习Web用的是VS&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术积累" scheme="https://Liuxh1990.github.io/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="Web开发系列" scheme="https://Liuxh1990.github.io/tags/Web%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何搭建免费个人博客详细教程</title>
+    <link href="https://Liuxh1990.github.io/2019/09/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/"/>
+    <id>https://Liuxh1990.github.io/2019/09/05/如何搭建免费个人博客详细教程/</id>
+    <published>2019-09-05T06:52:20.000Z</published>
+    <updated>2019-09-18T15:26:26.740Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt; 一直想做个个人的网站，闲暇时可以写点东西，顺便做点知识积累。最近不太忙，然后鼓捣一通，终于…emm… 话不多说了。还是以这篇文章作为开篇吧,上干货~&lt;/p&gt;
+&lt;h3 id=&quot;通过Github-Hexo-搭建个人博客&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术积累" scheme="https://Liuxh1990.github.io/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="搭建个人博客" scheme="https://Liuxh1990.github.io/tags/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>

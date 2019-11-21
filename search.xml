@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Swift学习之路 第一弹 Swift的基础语法]]></title>
+    <url>%2F2019%2F11%2F21%2FSwift%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%AC%AC%E4%B8%80%E5%BC%B9-Swift%E7%9A%84%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[1、在swift 中如何导入框架 ？12在oc中 #import &quot;xxx.h&quot;在swift中 import xxx 2、定义常量和变量 修饰 定义 常量 let 定义之后不能修改 变量 var 定义之后可以修改 如果需要制定常量的类型 可以直接使用 let x:类型 =值 1let a:Int = 10 也可以这样写： 1let a = 10 如果需要定制变量的类型 可以直接使用 var x: 类型 = 值 1var a:Int = 10 也可以这样写： 1var a = 10 swift 具有一个自动推导的特性 变量/常量的类型会根据右侧的代码执行结果，推导出对应的类型如果一个变量x 从来没有修改 ，建议改为let 关于let 和var 的选择 相对来讲 不可变的会更安全 。开发的时候，通常都先使用let ,在需要变化的时候 再改成var 例如 ： 12345var x = 10 let y = 20 print(x+y) 在执行上边代码的时候， xcode 会给我们反馈一个警告由于x 没有发生过修改 所以 修饰的时候 用 let 即可 如何修饰 修改视图属性 12let v = UIView ()v.backgroundColor=UIColor.red 定义一个view 设置view的背景颜色为红色 ，你会发现 ，这里我们用的是let 而不是var ，那么明明定义的view 属性发生变化了 ，不应该用var 修饰么 ？这里要强调一点：修改视图属性 ，仅仅修改的是视图的属性，并没有修改视图的指针地址。视图本身的指针没有发生变化 所以 用let 修饰 3、不同数据类型之间的运算在swift 中，对类型要求异常严格。 任何不同类型的数据之间 ，不允许直接运算。不会做默认的隐式转换，所有的类型确定都要由程序员负责。另外,swift中 小数是Double 类型 精度高 等同于 oc 中的 CGFloat。不存在基本数据类型,都是结构体 12let x=10let y = 10.5 如上所示。 如果我们要计算 x+y的值 ，需要将y 转化成整数 或者 将x 转化成double 。在oc 中的写法: 123int z = x + (int)y;或CGFloat z = (CGFloat)x + y; swift中的写法 ： 123let z = x + Int(y)或let z = Double (x) + y 4、注意事项 OC Swift 必须指明常量还是变量 可以不指明类型（自动推导机制） 变量名称可以是汉字不能是Unicode字符 变量名称可以是汉字或者Unicode字符 值可以不与类型匹配 值必须和类型相匹配 不同类型可以进行运算 类型安全 必须相同类型的参数才能进行运算 5、总结]]></content>
+      <categories>
+        <category>Swift</category>
+      </categories>
+      <tags>
+        <tag>Swift学习系列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第三弹 搭建初始界面导航]]></title>
+    <url>%2F2019%2F09%2F18%2F%E7%AC%AC%E4%B8%89%E5%BC%B9-%E6%90%AD%E5%BB%BA%E5%88%9D%E5%A7%8B%E7%95%8C%E9%9D%A2%E5%AF%BC%E8%88%AA%2F</url>
+    <content type="text"><![CDATA[从今天开始，以代码形式从头搭建一个基本的网页。由于是初学，所以现学现卖，学到哪里就写到哪里，初始会有很多不完善的地方，这些会一步一步在学习中慢慢完善。话不多说，进入正题… 一、网页布局网页布局有很多种方式，一般分为以下几个部分：头部区域、菜单导航区域、内容区域、底部区域。如下图所示： 二、搭建菜单导航区域目标： 菜单内容：首页、标签、分类、归档、关于 实现鼠标悬停效果 实现适配（导航标签等宽、居中） 默认选中第一个导航标签 代码 步骤：1、 创建index.html文件2、 创建style文件夹，在文件夹下创建indexStyle.css文件3、 创建js文件夹，在文件夹下创建indexJs.js文件4、 在index.html中引入indexStyle.css和indexJs.js 12&lt;link rel=&quot;stylesheet&quot; href=&quot;./style/indexStyle.css&quot;&gt; &lt;script src=&quot;./js/indexJs.js&quot;&gt;&lt;/script&gt; 5、 创建导航标签 12345678&lt;div id=&quot;nav-box&quot;&gt; &lt;!--banner部分--&gt; &lt;span id=&quot;index&quot;&gt;首页&lt;/span&gt; &lt;span id=&quot;tag&quot;&gt;标签&lt;/span&gt; &lt;span id=&quot;categories&quot;&gt;分类&lt;/span&gt; &lt;span id=&quot;achieve&quot;&gt;归档&lt;/span&gt; &lt;span id=&quot;about&quot;&gt;关于&lt;/span&gt; &lt;/div&gt; 6、 编辑CSS文件 1234567891011121314151617181920212223242526/* 伪选择器 */div &gt; span &#123; display: block; font-size: 20px; color: gray; background-color: aquamarine; width:20%; line-height: 40px; text-align: center; float: left;&#125;/* id 选择器，以 # 号开头 一个HTML中只能有一个 不能重复id */#nav-box &#123; white-space: nowrap; overflow-y: hidden; background-color:rosybrown; margin-left: 10%; margin-right: 10%; text-align: center; height: 40px;&#125; 三、 完整代码HTML文件1234567891011121314151617181920212223242526272829303132333435&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge,chrome=1&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;./style/indexStyle.css&quot;&gt; &lt;script src=&quot;./js/indexJs.js&quot;&gt;&lt;/script&gt; &lt;title&gt;我的博客&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h1 class=&quot;title&quot;&gt;首页&lt;/h1&gt; &lt;div class=&quot;line&quot;&gt;&lt;/div&gt; &lt;div id=&quot;nav-box&quot;&gt; &lt;!--banner部分--&gt; &lt;span id=&quot;index&quot;&gt;首页&lt;/span&gt; &lt;span id=&quot;tag&quot;&gt;标签&lt;/span&gt; &lt;span id=&quot;categories&quot;&gt;分类&lt;/span&gt; &lt;span id=&quot;achieve&quot;&gt;归档&lt;/span&gt; &lt;span id=&quot;about&quot;&gt;关于&lt;/span&gt; &lt;/div&gt; &lt;div&gt; &lt;!--主体部分--&gt; &lt;/div&gt; &lt;footer&gt; &lt;div&gt; &lt;!--尾部--&gt; &lt;/div&gt; &lt;/footer&gt;&lt;/body&gt;&lt;/html&gt; CSS文件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273/* 清除默认边距 */* &#123; margin: 0; padding: 0;&#125;/* class选择器，经常用到 以 . 开头 */.title &#123;margin-top: 10px;margin-bottom: 10px;text-align: center;&#125;.line &#123; height: 1px; background-color: gray; margin-bottom: 2px;&#125;/* 伪选择器 */div &gt; span &#123; display: block; font-size: 20px; color: gray; background-color: aquamarine; width:20%; line-height: 40px; text-align: center; float: left;&#125;/* 修改颜色 */span:hover &#123; background-color: #ddd; color: red; &#125;/* div :first-child &#123; margin-left: 5%;&#125;div :last-child &#123; margin-right: 5%; background-color: orange;&#125; *//* id 选择器，以 # 号开头 一个HTML中只能有一个 不能重复id */#nav-box &#123; white-space: nowrap; overflow-x: scroll; overflow-y: hidden; background-color:rosybrown; margin-left: 15%; margin-right: 15%; text-align: center; height: 40px;&#125; 四、知识点1、选择器种类 id选择器id选择器可以为标有特定id的HTML 元素指定特定的样式。id 选择器以“#”来定义 12例如：#para1 &#123;text-align:center;&#125; class选择器class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用。class 选择器在HTML中以class属性表示, 在 CSS 中，类选择器以一个点”.”号显示 12例如：.center &#123;text-align:center;&#125; 这里要注意：id选择器 一个HTML中 只能有一个 id作为唯一标识不能重复 class 选择器 class可以重复 扩展知识：伪选择器 鼠标悬停 改变字体 背景 123456例如：span :hover&#123;background-color:red;text-color:white&#125; 2、CSS 导入方式插入样式表的方法有三种： 外联样式表（推荐 常用） 1234例如：&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;&lt;/head&gt; 内联样式（不推荐） 12例如：&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt; 内部样式表 12345678例如：&lt;head&gt;&lt;style&gt;hr &#123;color:sienna;&#125;p &#123;margin-left:20px;&#125;&lt;/style&gt;&lt;/head&gt; 优先级：内联样式&gt;内部样式&gt;外部样式&gt;浏览器默认样式 3、盒子模型CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。 Margin(外边距) - 清除边框外的区域，外边距是透明的。 Border(边框) - 围绕在内边距和内容外的边框。 Padding(内边距) - 清除内容周围的区域，内边距是透明的。 Content(内容) - 盒子的内容，显示文本和图像。 当您指定一个CSS元素的宽度和高度属性时，你只是设置内容区域的宽度和高度。完全大小的元素，你还必须添加填充，边框和边距。 123456789101112131415例如：div &#123; width: 300px; border: 25px solid green; padding: 25px; margin: 25px; &#125;实际宽度为：300px (宽)+ 50px (左 + 右填充)+ 50px (左 + 右边框)+ 50px (左 + 右边距)= 450px 五、总结1、了解了网页基本构成2、创建了导航菜单并实现了鼠标悬停效果3、初步了解选择器种类（后续会继续补充）4、了解了CSS的三种导入方式5、了解了盒子模型的本质以及宽高计算]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>Web开发系列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第二弹 建立基本网页所需要了解的基本知识]]></title>
+    <url>%2F2019%2F09%2F12%2F%E7%AC%AC%E4%BA%8C%E5%BC%B9-%E5%BB%BA%E7%AB%8B%E5%9F%BA%E6%9C%AC%E7%BD%91%E9%A1%B5%E6%89%80%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[一、网页的基本构成 头部（head）:包含了网页的元数据。如 网页编码格式、标题、描述等 。这部分内容不会出现在可视化页面中。会在网页加载之前加载。下面是最基本的网页头部视图结构 1234567&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; //网页编码格式 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;// 初始化设置 &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge,chrome=1&quot;&gt;//兼容性设置 &lt;meta name=&quot;description&quot; content=&quot;前端小课&quot;&gt;//网站描述 &lt;title &gt;前端小课&lt;/title&gt;//网站标题&lt;/head&gt; 这里需要注意。为什么要用X-UA-Compatible？请参考: X-UA-Compatible的意义使用X-UA-Compatible来设置IE浏览器兼容模式 主体（body）网页的主体展示部分。当进入一个网页，目光所及，都是body的部分（对于没有footer的网页来说），body里的内容，也就是网页的骨架 尾部 （footer）一般来说 比较完善的网页都会有footer 部分。其内存放了一些备案信息和索引、参考链接 友情链接等 一个网页的基本构成如下图所示： 二、HTML标签列表 三、web开发的三驾马车（div + css +js）在web前端开发中,div + css + js这三驾马车分别代表着结构，展示，和交互。本章简单了解下这三个东西是干什么的，具体的会在以后的实践中边学边讲解 DIV在MDN官网是这样介绍的：HTML 元素 (或 HTML 文档分区元素) 是一个通用型的流内容容器，它在语义上不代表任何特定类型的内容，它可以被用来对其它元素进行分组，一般用于样式化相关的需求（使用 class 或 id 特性) 或者对具有相同特性的一组元素进行分组 (比如 lang)，它应该在没有任何其它语义元素可用时才使用 (比如 或 ) 。简单来说 ，我们可以将div看做是一个里边可以盛放各种标签的矩形容器。 CSSCSS 用于控制网页的样式和布局。MDN官网介绍:层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。 JavaScriptJavaScript用于实现页面交互。MDN官网介绍JavaScript ( JS ) 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web 页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，例如 Node.js、 Apache CouchDB 和 Adobe Acrobat。JavaScript 是一种基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。 四、总结这篇文章我们学到了哪些知识？ 网页的基本构成 HTML的各种标签 以及标签的用途 简单了解了DIV 、CSS 、JavaScript的概念]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>Web开发系列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第一弹 Web开发环境搭建]]></title>
+    <url>%2F2019%2F09%2F09%2F%E7%AC%AC%E4%B8%80%E5%BC%B9-Web%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[今天开始从零学习Web,顺便做下积累，以便以后回顾的时候看 ，也为有想学习前端的小伙伴们提供一点借鉴，少走一些坑。相关的文章都会放入WEB开发系列文章中，话不多说，开整吧··· 一、下载VSCode和浏览器(本人学习Web用的是VS)这里附上VSCode官网地址VSCode下载浏览器推荐谷歌浏览器下载地址 二、VSCode使用概览 1234567891011121、资源管理器用于新建、编辑、删除文件或文件夹等操作2、搜索框用于条件搜索3、源代码管理用于源代码管理程序注册4、调试用于调试程序5、扩展/插件 管理插件6、git创建仓储管理 三、安装插件（以汉化插件为例） 安装步骤： 1、点击扩展 进入安装插件界面 2、在应用商店搜索框中输入chinese 3、选取中文简体插件安装 推荐的2款插件1、Live Server2、open in browser 三、 设置文本自动保存 如图。点击设置，选择setting后 显示上图界面 。在界面中输入auto save 默认是关闭状态 选择自动保存模式 设置时间范围 四、写出第一个自己的 hello world操作步骤(三步一张图)： 1、点击资源管理器，新建文件 2、选中文件 右击另存为 选择文件夹目录 将文件存为.html格式3、在文件中输入 ！然后 按tab 键 系统会自动生成一段代码 整体流程如下图所示 接下来继续 1、将title 改为“第一个文件”2、在body中插入标签 文本写第一个hello world!3、右键 选择open with Live Server 执行效果 如下图 至此，大功告成！ 五、总结那么这篇文章我们学到了哪些知识？1、开发环境的搭建和使用2、插件的安装和使用3、文件的创建和调试]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>Web开发系列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何搭建免费个人博客详细教程]]></title>
+    <url>%2F2019%2F09%2F05%2F%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[一直想做个个人的网站，闲暇时可以写点东西，顺便做点知识积累。最近不太忙，然后鼓捣一通，终于…emm… 话不多说了。还是以这篇文章作为开篇吧,上干货~ 通过Github+Hexo 搭建个人博客一、准备工作开始之前，请确认具备如下条件： 必须有一个github账号：没有的要去注册一个,不做赘述 github官网 电脑里安装了Node：Node官网下载地址 电脑里安装了git: Git官网下载地址 二、搭建GitHub Page网站登录github账号 ，找到repository， 新建一个respository。这里要注意 ： 新建的respository 名字必须叫username.github.io 比如：你的github账号名字叫 admin 那么新建的respository的名字就叫 admin.github.io注意：账号名字不是昵称 要区分开 这里附上GitHub Page官网地址 三、安装Hexo（以Mac 为例，博主用的是Mac）所有必备的应用程序安装完成后。安装Hexo Hexo官网文档 通过如下命令安装Hexo: 1$ npm install -g hexo-cli 安装完Hexo后，执行如下命令： 123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 例如，我想创建个名为flydom的文件夹。执行的命令如下 123$ hexo init flydom$ cd flydom$ npm install 执行完成后，在电脑的根目录下会生成相关文件，走到这步，网站初步搭建完成。 四、更改网站的配置信息新建完成后，文件夹下目录结构如下 12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes 网站的配置参数大部分存储于_config.yml文件中 重要配置（必须修改）： url: 网站地址:https://username.github.io 推送设置（将网站部署到远程github需要） 12345deploy: type: gitrepo: https://github.com/username/username.github.io.gitbranch: mastermessage: 其他配置 title: 标题 subtitle: 副标题 description: 网站描述 author: 开发者 language: 语言 （默认英语 en 汉语为zh-CN） timezone: 时区 默认与电脑同步 常用操作 1234hexo g 重新生成文件hexo d 将网站推送到远程服务器hexo clean 删除网站文件夹hexo s 本地查看效果 五、本地调试&amp; 推送上述更改完成后，执行如下命令 12hexo ghexo s 在浏览器中输入http://localhost:4000 预览效果 无问题执行如下命令： 1hexo d 完成后。https://username.github.io 地址下便可以看到你的博客了。当然 这仅仅是非常粗糙的一个demo 后续功能还需要自己继续优化···]]></content>
+      <categories>
+        <category>技术积累</category>
+      </categories>
+      <tags>
+        <tag>搭建个人博客</tag>
+      </tags>
+  </entry>
+</search>
